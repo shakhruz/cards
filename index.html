@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АРТ ТРансформация/title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card"></div>
+    <button onclick="showRandomCard()">Новая карта</button>
+
+    <script>
+        const cards = [
+            'Ace of Spades', 
+            'Two of Hearts', 
+            'Three of Diamonds', 
+            'Four of Clubs', 
+            'Five of Spades', 
+            'Six of Hearts', 
+            'Seven of Diamonds', 
+            'Eight of Clubs', 
+            'Nine of Spades', 
+            'Ten of Hearts', 
+            'Jack of Diamonds', 
+            'Queen of Clubs', 
+            'King of Spades'
+        ];
+
+        function getRandomCard() {
+            const randomIndex = Math.floor(Math.random() * cards.length);
+            return cards[randomIndex];
+        }
+
+        function showRandomCard() {
+            const cardElement = document.getElementById('card');
+            cardElement.textContent = getRandomCard();
+        }
+
+        // Show a random card when the page loads
+        showRandomCard();
+    </script>
+</body>
+</html>
